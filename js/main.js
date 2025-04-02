@@ -150,21 +150,21 @@ function validateForm() {
     return isValid; 
 }
 
-let ngngn = validateForm();
+// let ngngn = validateForm();
 
-function name5() {
-    if (ngngn == true) {
-        console.log('Тру');
+// function name5() {
+//     if (ngngn == true) {
+//         console.log('Тру');
 
-    } else if (ngngn == false) {
-        console.log('Фелс');
-    }
-}
+//     } else if (ngngn == false) {
+//         console.log('Фелс');
+//     }
+// }
 
-name5();
+// name5();
 
 
 
 // console.log(!validateForm());
 // alert(validateForm());
-
+// -----------------------------------------------------
