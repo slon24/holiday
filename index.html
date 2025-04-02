@@ -169,12 +169,14 @@
         </section>
         <section class="main-form">
             <div class="container">
-                <form class="form-callback" action="php/form-callback.php" method="post" target="_blank">
+                <form class="form-callback" onsubmit="return validateForm()" action="php/form-callback.php" method="post" target="_blank">
                     <p class="form-callback-title">Зворотній зв’язок</p>
-                    <label class="form-callback-name-label" for="name">Ім’я</label><br>
-                    <input class="form-callback-name-text" type="text" name="yourName" id="name" placeholder="Введіть ім'я"><br>
-                    <label class="form-callback-name-label" for="teleph">Номер телефону</label><br>
-                    <input class="form-callback-name-text" type="tel" name="yourTel" id="teleph" placeholder="Введіть номер телефону"><br>
+                    <label class="form-callback-label" for="name">Ім’я</label><br>
+                    <input class="form-callback-text" type="text" name="yourName" id="name" placeholder="Введіть ім'я"><br>
+                    <span class="form-callback-error" id="name-error"></span>
+                    <label class="form-callback-label" for="teleph">Номер телефону</label><br>
+                    <input class="form-callback-text" type="tel" name="yourTel" id="teleph" placeholder="Введіть номер телефону"><br>
+                    <span class="form-callback-error" id="teleph-error"></span>
                     <input class="form-callback-button" type="submit" value="Запросити виклик" name="submit">
                 </form>
             </div>

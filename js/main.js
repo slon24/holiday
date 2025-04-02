@@ -80,4 +80,91 @@ $(document).ready(function () {
         ]
     });
 });
+// валідація форми -------------------------------------
+
+function validateForm() {
+    const name = document.getElementById("name").value;
+    const teleph = document.getElementById("teleph").value;
+
+    const nameError = document.getElementById("name-error");
+    const telephError = document.getElementById("teleph-error");
+    // console.log(validateForm());
+    // nameError.textContent = "";
+    // telephError.textContent = "";
+
+    let isValid = true;
+    let mas = [/ /, /!/, /%/, /#/, /_/, /"/, /\$/, /&/, /\(/, /\)/, /\*/, /\+/, /,/, /-/, /\./, /\//, /:/, /;/, /</, /=/, />/, /\?/, /@/, /~/, /}/, /\|/, /{/, /\[/, /\\/, /\]/, /\d/];
+
+    let newArr = name.split(' ');
+    console.log(newArr);
+
+    let y = newArr.indexOf("");
+    // for (let index = 0; index < newArr.length; index++) {
+
+
+
+
+    // }
+
+    for (const ele of newArr) {
+        console.log(ele);
+        
+        console.log(y);
+        newArr.splice(y, 10);
+        console.log(newArr);
+    }
+
+    if (newArr.length >= 1) {
+        console.log(newArr.length);
+        mas.shift();
+    }
+    console.log(mas);
+    for (let index = 0; index < mas.length; index++) {
+        const element = mas[index];
+
+        if (name === "" || element.test(name)) {
+            nameError.textContent =
+                "Введіть ваше ім'я";
+            isValid = false;
+        }
+    }
+
+    const name1 = document.getElementById("name");
+    name1.addEventListener('focus', function (e) {
+        nameError.textContent = '';
+
+    })
+
+    if (teleph === "") {
+        telephError.textContent =
+            "Введіть номер телефону";
+        isValid = false;
+    }
+
+    const teleph1 = document.getElementById("teleph");
+    teleph1.addEventListener('focus', function (e) {
+        telephError.textContent = '';
+
+    })
+
+    return isValid; 
+}
+
+let ngngn = validateForm();
+
+function name5() {
+    if (ngngn == true) {
+        console.log('Тру');
+
+    } else if (ngngn == false) {
+        console.log('Фелс');
+    }
+}
+
+name5();
+
+
+
+// console.log(!validateForm());
+// alert(validateForm());
 

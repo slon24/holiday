@@ -218,6 +218,7 @@ body {
   bottom: -80px;
   background-color: #202846;
   border: 1px solid black;
+  z-index: 10;
 }
 .header-wrapper .lang .lang-list .lang-list-item .lang-list-link {
   padding: 6px;
@@ -421,7 +422,7 @@ body {
   width: fit-content;
   border: 2px solid rgba(168, 178, 215, 0.6);
   width: 520px;
-  height: auto;
+  height: 500px;
   margin-bottom: 50px;
   padding-top: 20px;
   padding-left: 55px;
@@ -436,40 +437,45 @@ body {
   color: #414141;
   margin-bottom: 45px;
 }
-.form-callback-name-label {
+.form-callback-label {
   display: inline-block;
   font-size: 28px;
   color: #323236;
   font-family: "Radio Canada", sans-serif;
   font-weight: 400;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
-.form-callback-name-text {
+.form-callback-text {
   width: 100%;
   height: 60px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   border: 2px solid #cbd1e7;
   padding: 0 15px;
   font-size: 20px;
   font-family: "Radio Canada", sans-serif;
+  position: relative;
 }
-.form-callback-name-text:focus {
+.form-callback-text:focus {
   border: 2px solid #8593c7;
 }
-.form-callback-name-text:focus::-moz-placeholder {
+.form-callback-text:focus::-moz-placeholder {
   font-size: 0;
 }
-.form-callback-name-text:focus::placeholder {
+.form-callback-text:focus::placeholder {
   font-size: 0;
 }
-.form-callback-name-text::-moz-placeholder {
+.form-callback-text::-moz-placeholder {
   font-family: "Radio Canada", sans-serif;
 }
-.form-callback-name-text::placeholder {
+.form-callback-text::placeholder {
   font-family: "Radio Canada", sans-serif;
 }
-.form-callback #teleph {
-  margin-bottom: 150px;
+.form-callback-error {
+  display: block;
+  height: 15px;
+  color: red;
+  margin-bottom: 15px;
+  font-family: "Radio Canada", sans-serif;
 }
 .form-callback-button {
   background-color: #38467b;
