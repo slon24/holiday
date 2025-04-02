@@ -4,15 +4,15 @@
 $yourName = htmlspecialchars($_POST['yourName']);
 $yourTel = htmlspecialchars($_POST['yourTel']);
 
-$servername = "localhost";
-$username = "Adminka";
-$password = "";
-$dbname = "holiday_time_baza";
+//$servername = "localhost";
+//$username = "Adminka";
+//$password = "";
+//$dbname = "holiday_time_baza";
 
-// $servername = "mysql314.1gb.ua";
-// $username = "gbua_z_busd8f13";
-// $password = "3fffa4ze2qwr";
-// $dbname = "gbua_z_busd8f13";
+$servername = "mysql314.1gb.ua";
+$username = "gbua_z_busd8f13";
+$password = "3fffa4ze2qwr";
+$dbname = "gbua_z_busd8f13";
 
 date_default_timezone_set('Europe/Sofia');
 
