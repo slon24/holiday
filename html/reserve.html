@@ -35,6 +35,9 @@
                     <li class="menu-item">
                         <a class="menu-link" href="personal-account.html">ОСОБИСТИЙ<br>КАБІНЕТ</a>
                     </li>
+                    <li class="menu-item">
+                        <button id="openFavoritesBtn" class="menu-link star-link"></button>
+                    </li>
                 </ul>
                 <div class="lang">
                     <img class="lang-icon" src="../images/globe.png" alt="lang">
@@ -55,8 +58,203 @@
         </div>
     </header>
     <main class="main">
-        <section>
+        <section class="reserve">
+            <div class="title-all">
+                <h2>Забронювати будиночок</h2>
+            </div>
+            <div class="container">
+                <div class="reserve-wrap">
+                    <!-- <select class="cityes">
+                        <option class="first" value="0" disabled="disabled" selected="selected">Оберіть
+                            місцерозташування</option>
+                        <option value="2">два</option>
+                        <option value="3">три</option>
+                        <option value="4">чотири</option>
+                        <option value="5">п'ять</option>
+                        <option value="1">один</option>
+                        <option value="1">один</option>
+                        <option value="1">один</option>
+                        <option value="1">один</option>
+                        <option value="1">один</option>
+                    </select> -->
+                    <form action="#" method="post" onsubmit="return false;">
+                        <div class="custom-select-wrapper">
+                            <!-- Справжній select (буде працювати у формі) -->
+                            <select name="mySelect">
+                                <option value="0">Оберіть місцерозташування</option>
+                                <option value="1">Бакота</option>
+                                <option value="2">Карпати</option>
+                                <option value="3">Київ</option>
+                                <option value="4">Одеська область</option>
+                                <option value="5">Полтавська область</option>
+                                <option value="6">Миколаївська область</option>
+                                <option value="7">Житомирська область</option>
+                                <option value="8">Закарпатська область</option>
+                            </select>
 
+                            <!-- Кастомний select -->
+                            <div class="custom-select">
+                                <div class="custom-select__trigger">
+                                    Оберіть місцерозташування
+                                    <div class="custom-select-arrow">
+                                        <img src="../images/arrow3.png">
+                                    </div>
+                                </div>
+                                <ul class="custom-options"></ul>
+                            </div>
+                        </div>
+
+                        <!-- <br>
+                        <button type="submit">Відправити</button> -->
+                    </form>
+
+                    <div class="reserve-items">
+                        <div class="reserve-item item" id="item1">
+                            <div class="reserve-image-wrap">
+                                <img class="reserve-image" src="../images/image5.jpg" alt="Бакота">
+                            </div>
+
+                            <div class="reserve-info">
+                                <h3 class="reserve-info-title">Незвідана Бакота </h3>
+                                <p class="reserve-info-text">У Хмельницькій області розташований загублений край -
+                                    Бакота. Мальовничий каньйон з давньою історією захоплює
+                                    своїми просторами та незвичною атмосферою. Бджільництво,
+                                    свіжий мед із польових трав, дотик до природи.
+                                </p>
+                            </div>
+                            <a class="reserve-info-btn" href="#">Детальніше</a>
+                            <div class="reserve-info-icon star" onclick="toggleFavorite(this)"></div>
+                        </div>
+
+                        <div class="reserve-item item" id="item2">
+                            <div class="reserve-image-wrap">
+                                <img class="reserve-image" src="../images/image41.jpg" alt="Карпати">
+                            </div>
+
+                            <div class="reserve-info">
+                                <h3 class="reserve-info-title">Полонини Карпат </h3>
+                                <p class="reserve-info-text">Полонини Карпат, у селі Орів посеред гір
+                                    розташувався затишний куточок для незабутніх
+                                    вражень. Справжні українські гори, власноручне
+                                    сироваріння на полонині, водоспади та
+                                    вікові дерева чекають на Вас.
+                                </p>
+                            </div>
+                            <a class="reserve-info-btn" href="#">Детальніше</a>
+                            <div class="reserve-info-icon star" onclick="toggleFavorite(this)"></div>
+                        </div>
+
+                        <div class="reserve-item item" id="item3">
+                            <div class="reserve-image-wrap">
+                                <img class="reserve-image" src="../images/image61.jpg" alt="Київ">
+                            </div>
+
+                            <div class="reserve-info">
+                                <h3 class="reserve-info-title">Автентична Київщина</h3>
+                                <p class="reserve-info-text">Неподалік центра Києва розташувалось автентичне українське
+                                    село на території однойменного села Пирогово. Дерев’яні млини, запашний хліб,
+                                    приготовлений своїми руками, українські пісні та багато іншого чекає на вас уже
+                                    зараз.
+                                </p>
+                            </div>
+                            <a class="reserve-info-btn" href="#">Детальніше</a>
+                            <div class="reserve-info-icon star" onclick="toggleFavorite(this)"></div>
+                        </div>
+
+                        <div class="reserve-item item" id="item4">
+                            <div class="reserve-image-wrap">
+                                <img class="reserve-image" src="../images/image71.jpg" alt="Одещина">
+                            </div>
+
+                            <div class="reserve-info">
+                                <h3 class="reserve-info-title">Нетипова Одещина</h3>
+                                <p class="reserve-info-text">В Одеській області знаходиться мальовниче містечко Вилкове.
+                                    Його ще називають «українською Венецією». Вилкове - це містечко
+                                    на воді, весь в каналах. Розташоване в місці, де зустрічаються річка
+                                    Дунай і Чорне море. Люди пересуваються переважно човнами.
+                                    Нетипове українське село не залишить Вас без вражень.
+                                </p>
+                            </div>
+                            <a class="reserve-info-btn" href="#">Детальніше</a>
+                            <div class="reserve-info-icon star" onclick="toggleFavorite(this)"></div>
+                        </div>
+
+                        <div class="reserve-item item" id="item5">
+                            <div class="reserve-image-wrap">
+                                <img class="reserve-image" src="../images/image71.jpg" alt="Одещина">
+                            </div>
+
+                            <div class="reserve-info">
+                                <h3 class="reserve-info-title">Полтавська область</h3>
+                                <p class="reserve-info-text">В Одеській області знаходиться мальовниче містечко Вилкове.
+                                    Його ще називають «українською Венецією». Вилкове - це містечко
+                                    на воді, весь в каналах. Розташоване в місці, де зустрічаються річка
+                                    Дунай і Чорне море. Люди пересуваються переважно човнами.
+                                    Нетипове українське село не залишить Вас без вражень.
+                                </p>
+                            </div>
+                            <a class="reserve-info-btn" href="#">Детальніше</a>
+                            <div class="reserve-info-icon star" onclick="toggleFavorite(this)"></div>
+                        </div>
+
+                        <div class="reserve-item item" id="item6">
+                            <div class="reserve-image-wrap">
+                                <img class="reserve-image" src="../images/image71.jpg" alt="Одещина">
+                            </div>
+
+                            <div class="reserve-info">
+                                <h3 class="reserve-info-title">Миколаївська область</h3>
+                                <p class="reserve-info-text">В Одеській області знаходиться мальовниче містечко Вилкове.
+                                    Його ще називають «українською Венецією». Вилкове - це містечко
+                                    на воді, весь в каналах. Розташоване в місці, де зустрічаються річка
+                                    Дунай і Чорне море. Люди пересуваються переважно човнами.
+                                    Нетипове українське село не залишить Вас без вражень.
+                                </p>
+                            </div>
+                            <a class="reserve-info-btn" href="#">Детальніше</a>
+                            <div class="reserve-info-icon star" onclick="toggleFavorite(this)"></div>
+                        </div>
+
+                        <div class="reserve-item item" id="item7">
+                            <div class="reserve-image-wrap">
+                                <img class="reserve-image" src="../images/image71.jpg" alt="Одещина">
+                            </div>
+
+                            <div class="reserve-info">
+                                <h3 class="reserve-info-title">Житомирська область</h3>
+                                <p class="reserve-info-text">В Одеській області знаходиться мальовниче містечко Вилкове.
+                                    Його ще називають «українською Венецією». Вилкове - це містечко
+                                    на воді, весь в каналах. Розташоване в місці, де зустрічаються річка
+                                    Дунай і Чорне море. Люди пересуваються переважно човнами.
+                                    Нетипове українське село не залишить Вас без вражень.
+                                </p>
+                            </div>
+                            <a class="reserve-info-btn" href="#">Детальніше</a>
+                            <div class="reserve-info-icon star" onclick="toggleFavorite(this)"></div>
+                        </div>
+
+                        <div class="reserve-item item" id="item8">
+                            <div class="reserve-image-wrap">
+                                <img class="reserve-image" src="../images/image71.jpg" alt="Одещина">
+                            </div>
+
+                            <div class="reserve-info">
+                                <h3 class="reserve-info-title">Закарпатська область</h3>
+                                <p class="reserve-info-text">В Одеській області знаходиться мальовниче містечко Вилкове.
+                                    Його ще називають «українською Венецією». Вилкове - це містечко
+                                    на воді, весь в каналах. Розташоване в місці, де зустрічаються річка
+                                    Дунай і Чорне море. Люди пересуваються переважно човнами.
+                                    Нетипове українське село не залишить Вас без вражень.
+                                </p>
+                            </div>
+                            <a class="reserve-info-btn" href="#">Детальніше</a>
+                            <div class="reserve-info-icon star" onclick="toggleFavorite(this)"></div>
+                        </div>
+
+                        <!-- <ul id="favorites"></ul> -->
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <footer class="footer">
@@ -66,7 +264,20 @@
             </div>
         </div>
     </footer>
-    <script src="../js/main.js"></script>
+
+    <div class="arrow-wrap">
+        <img src="../images/arrow2.png" class="arrow-icon">
+    </div>
+
+    <div id="favoritesModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Моє вибране</h2>
+            <div id="favorites"></div>
+        </div>
+    </div>
+
+    <script src="../js/reserve.js"></script>
 </body>
 
 </html>

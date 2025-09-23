@@ -88,17 +88,16 @@ function validateForm() {
 
     const nameError = document.getElementById("name-error");
     const telephError = document.getElementById("teleph-error");
-    // console.log(validateForm());
-    // nameError.textContent = "";
-    // telephError.textContent = "";
 
     let isValid = true;
-    let mas = [/ /, /!/, /%/, /#/, /_/, /"/, /\$/, /&/, /\(/, /\)/, /\*/, /\+/, /,/, /-/, /\./, /\//, /:/, /;/, /</, /=/, />/, /\?/, /@/, /~/, /}/, /\|/, /{/, /\[/, /\\/, /\]/, /\d/];
+    let nameArrNo = [/ /, /!/, /%/, /#/, /_/, /"/, /\$/, /&/, /\(/, /\)/, /\*/, /\+/, /,/, /-/, /\./, /\//, /:/, /;/, /</, /=/, />/, /\?/, /@/, /~/, /}/, /\|/, /{/, /\[/, /\\/, /\]/, /\d/];
 
     let newArr = name.split(' ');
     console.log(newArr);
 
-    let y = newArr.indexOf("");
+    let spaceNo = newArr.indexOf("");
+    console.log(spaceNo);
+    alert(spaceNo);
     // for (let index = 0; index < newArr.length; index++) {
 
 
@@ -108,23 +107,22 @@ function validateForm() {
 
     for (const ele of newArr) {
         console.log(ele);
-        
-        console.log(y);
-        newArr.splice(y, 10);
+
+        console.log(spaceNo);
+        newArr.splice(spaceNo, 10);
         console.log(newArr);
     }
 
     if (newArr.length >= 1) {
         console.log(newArr.length);
-        mas.shift();
+        nameArrNo.shift();
     }
-    console.log(mas);
-    for (let index = 0; index < mas.length; index++) {
-        const element = mas[index];
+    console.log(nameArrNo);
+    for (let index = 0; index < nameArrNo.length; index++) {
+        const element = nameArrNo[index];
 
         if (name === "" || element.test(name)) {
-            nameError.textContent =
-                "Введіть ваше ім'я";
+            nameError.textContent = "Введіть ваше ім'я";
             isValid = false;
         }
     }
@@ -136,18 +134,38 @@ function validateForm() {
     })
 
     if (teleph === "") {
-        telephError.textContent =
-            "Введіть номер телефону";
+        telephError.textContent = "Введіть номер телефону";
         isValid = false;
     }
 
+
+
+    // document.forms['myform'].addEventListener('submit', function (event) {
+    //     console.log('but');
+
     const teleph1 = document.getElementById("teleph");
+
     teleph1.addEventListener('focus', function (e) {
+    //    let ner = teleph1.focus();
+    //    if (ner) {
+        
+    //    }
+       
+       
+        // if (teleph.textContent != '') {
+            
+            
+        //     telephError.textContent = "Введіть номер телефону";
+        // } else {
+        //     teleph1.focus();
+        //     telephError.textContent = ''
+        // }
         telephError.textContent = '';
-
     })
+    // event.preventDefault();
+    // })
 
-    return isValid; 
+    return isValid;
 }
 
 // let ngngn = validateForm();
@@ -167,4 +185,49 @@ function validateForm() {
 
 // console.log(!validateForm());
 // alert(validateForm());
-// -----------------------------------------------------
+
+// window.open('https://javascript.info');
+
+// стрілка вгору -----------------------------------------------------
+
+window.addEventListener('scroll', function () {
+    let arrow = document.querySelector('.arrow-wrap');
+
+    if (window.pageYOffset > 500) {
+        arrow.style.opacity = '.7';
+        arrow.style.visibility = 'visible';
+    } else {
+        arrow.style.opacity = '0';
+        arrow.style.visibility = 'hidden';
+    }
+    arrow.addEventListener('click', function (e) {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    })
+});
+
+// ip адреса ---------------------------------------------------------
+
+function getIPAddress() {
+    $.getJSON("https://jsonip.com?callback=?",
+        function (data) {
+            console.log(data.ip);
+            let ipAddr = data.ip;
+            let forma = document.forms['myform'];
+            let inp = document.createElement('textarea');
+            forma.prepend(inp);
+            inp.innerHTML = ipAddr;
+            console.log(inp);
+            inp.setAttribute('name', 'ip');
+            inp.setAttribute('type', 'text');
+            console.log(inp);
+            inp.style.display = 'none';
+        });
+};
+
+getIPAddress();
+
+// --------------------------------------------------------------

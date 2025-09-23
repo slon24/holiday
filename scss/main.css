@@ -99,7 +99,8 @@ h6 {
 body {
   display: flex;
   flex-direction: column;
-  background-color: #d5daec;
+  background-color: rgb(213, 217.8, 235.8);
+  position: relative;
 }
 
 .header {
@@ -173,10 +174,10 @@ body {
   right: 0;
 }
 .header-wrapper .menu .menu-item:hover {
-  background-color: #354274 !important;
+  background-color: rgb(52.8, 66, 115.5) !important;
 }
 .header-wrapper .menu .menu-item.menu-item-active {
-  background-color: #2d3862;
+  background-color: rgb(44.8, 56, 98);
 }
 .header-wrapper .lang {
   display: flex;
@@ -375,7 +376,7 @@ body {
   margin-left: 20px;
 }
 .slider-items .slider-inner .slider-descr .slider-btn:hover {
-  background-color: #354274;
+  background-color: rgb(52.8, 66, 115.5);
 }
 .slider-items .slider-inner .slider-image {
   position: absolute;
@@ -388,7 +389,7 @@ body {
 }
 
 .cont-plus-inner {
-  background-color: #c0c7e2;
+  background-color: rgb(192, 199.2, 226.2);
   display: flex;
   align-items: center;
   height: 410px;
@@ -420,7 +421,7 @@ body {
   margin: 0 auto;
   width: -moz-fit-content;
   width: fit-content;
-  border: 2px solid rgba(168, 178, 215, 0.6);
+  border: 2px solid rgba(167.5, 177.5, 215, 0.6);
   width: 520px;
   height: 500px;
   margin-bottom: 50px;
@@ -449,14 +450,14 @@ body {
   width: 100%;
   height: 60px;
   margin-bottom: 5px;
-  border: 2px solid #cbd1e7;
+  border: 2px solid rgb(202.5, 208.5, 231);
   padding: 0 15px;
   font-size: 20px;
   font-family: "Radio Canada", sans-serif;
   position: relative;
 }
 .form-callback-text:focus {
-  border: 2px solid #8593c7;
+  border: 2px solid rgb(132.5, 146.5, 199);
 }
 .form-callback-text:focus::-moz-placeholder {
   font-size: 0;
@@ -478,7 +479,7 @@ body {
   font-family: "Radio Canada", sans-serif;
 }
 .form-callback-button {
-  background-color: #38467b;
+  background-color: rgb(56, 70, 122.5);
   height: 100px;
   width: 100%;
   position: absolute;
@@ -492,6 +493,234 @@ body {
 }
 .form-callback-button:hover {
   background-color: #40508c;
+}
+
+.title-all {
+  background-color: #C1C1D6;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "PT Sans", sans-serif;
+  font-style: italic;
+  color: #202846;
+}
+
+.title-all h2:first-child {
+  width: 78%;
+  max-width: 100%;
+  font-size: 48px;
+}
+
+.about-top {
+  background-image: url(../images/Rectangle39.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  font-family: "PT Sans", sans-serif;
+  text-align: center;
+  padding: 50px 160px;
+  margin: 25px 0;
+}
+.about-top-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+}
+.about-top-descr {
+  font-size: 36px;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.about-body {
+  background-color: rgb(192, 199.2, 226.2);
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  padding: 60px 70px;
+  margin-bottom: 25px;
+}
+.about-body-text {
+  margin-bottom: 50px;
+}
+.about-body-text:last-child {
+  margin-bottom: 0;
+}
+
+.reserve-wrap {
+  padding: 0 50px;
+}
+
+.custom-select-wrapper {
+  position: relative;
+  width: 100%;
+  height: 73px;
+  margin-top: 55px;
+}
+
+/* Ховаємо стандартний select */
+.custom-select-wrapper select {
+  display: none;
+}
+
+.custom-select {
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  height: 100%;
+}
+
+.custom-select__trigger {
+  font-family: "PT Sans", sans-serif;
+  font-size: 28px;
+  color: #333333;
+  padding: 8px;
+  background: #fff;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-options {
+  display: none;
+  position: absolute;
+  width: 100%;
+  background: white;
+  margin-top: 4px;
+  list-style: none;
+  padding: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.custom-options li {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: rgb(170.85, 170.85, 170.85);
+  font-family: "PT Sans", sans-serif;
+  font-style: italic;
+  font-size: 32px;
+  text-align: center;
+  border-bottom: 1px solid #fff;
+  color: rgb(43.35, 43.35, 43.35);
+}
+
+.custom-options li:hover {
+  background-color: rgb(127.5, 127.5, 127.5);
+  color: #000;
+}
+
+.custom-select-arrow {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.custom-select-arrow.rotate {
+  transform: rotate(180deg) translateY(50%);
+}
+
+.custom-options.show {
+  display: block;
+}
+
+.reserve-items {
+  margin-top: 55px;
+}
+.reserve-items .reserve-item {
+  background-color: #b9c1df;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 36px;
+  position: relative;
+}
+.reserve-items .reserve-item .reserve-image-wrap {
+  width: 485px;
+  height: 245px;
+  margin: 0 10px;
+}
+.reserve-items .reserve-item .reserve-image-wrap .reserve-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.reserve-items .reserve-item .reserve-info {
+  width: 712px;
+  padding: 0 10px;
+  position: relative;
+}
+.reserve-items .reserve-item .reserve-info .reserve-info-title {
+  font-family: "PT Sans", sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  font-style: italic;
+  color: #353C57;
+  margin-bottom: 10px;
+}
+.reserve-items .reserve-item .reserve-info .reserve-info-title::after {
+  content: "";
+  display: block;
+  background-color: #fff;
+  height: 3px;
+  margin-top: 7px;
+}
+.reserve-items .reserve-item .reserve-info .reserve-info-text {
+  background-color: rgb(222.11, 211.99, 211.99);
+  padding: 25px;
+  height: 184px;
+  font-family: "PT Sans", sans-serif;
+  font-size: 22px;
+  color: #202846;
+  text-align: center;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.reserve-items .reserve-item .reserve-info-btn {
+  position: absolute;
+  right: -50px;
+  bottom: 10px;
+  width: 200px;
+  height: 60px;
+  background-color: #202846;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+}
+.reserve-items .reserve-item .reserve-info-btn:hover {
+  background-color: rgb(44.8, 56, 98);
+}
+.reserve-items .reserve-item .reserve-info-icon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  background-image: url(../images/emojione_star.png);
+  background-position: center;
+}
+.reserve-items .reserve-item .reserve-info-icon.active {
+  background-image: url(../images/Frame1.png);
 }
 
 .footer {
@@ -512,4 +741,95 @@ body {
   font-size: 28px;
   color: #EEECF1;
   font-style: italic;
+}
+
+.arrow-wrap {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  position: fixed;
+  bottom: 140px;
+  right: 50px;
+  cursor: pointer;
+  background-color: rgb(127.5, 127.5, 127.5);
+  transition: 0.5s ease;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+.arrow-wrap:hover {
+  opacity: 1 !important;
+}
+.arrow-wrap .arrow-icon {
+  width: 30%;
+  margin: auto;
+}
+
+/* Модальне вікно */
+.modal {
+  display: none;
+  /* приховане за замовчуванням */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* чорний фон */
+}
+
+/* Контейнер модального вікна */
+.modal-content {
+  background: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+  max-height: 80%;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Кнопка закриття */
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.star-link {
+  font-size: 35px !important;
+  background-color: transparent;
+}
+
+#favorites {
+  font-family: "PT Sans", sans-serif;
+}
+
+#favorites .reserve-item {
+  display: flex !important;
+  border: 1px solid gold;
+}
+
+#favorites .reserve-image-wrap {
+  width: 300px;
+}
+
+#favorites .reserve-image-wrap .reserve-image {
+  width: 300px;
+  padding: 20px;
+}
+
+#favorites .reserve-info {
+  padding: 20px;
+}
+
+#favorites .reserve-info-btn {
+  position: absolute;
 }/*# sourceMappingURL=main.css.map */

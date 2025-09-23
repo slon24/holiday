@@ -92,8 +92,12 @@ $bg-btn-color: #202846;
 $white-color-text: #fff;
 $descr-color-text: #202846;
 $darken-white-color: #F2EEEE;
+$black-color: #000;
+$title-color: #C1C1D6;
+$title-color-text: #353C57;
 
 $font-main: 'Radio Canada', sans-serif;
+$font-PT: 'PT Sans', sans-serif;
 
 %btn {
     font-family: $font-main;
@@ -109,6 +113,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: lighten($primary-color, 68);
+    position: relative;
 }
 
 .header {
@@ -552,7 +557,273 @@ body {
 
 }
 
+// ебаут ---------------------------------
+.title-all {
+    background-color: $title-color;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-PT;
+    font-style: italic;
+    color: $descr-color-text;
+}
+
+.title-all h2:first-child {
+    width: 78%;
+    max-width: 100%;
+    font-size: 48px;
+}
+
+.about-top {
+    background-image: url(../images/Rectangle39.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    // height: 227px;
+    color: $white-color-text;
+    font-family: $font-PT;
+    text-align: center;
+    padding: 50px 160px;
+    margin: 25px 0;
+
+    &-title {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 56px;
+    }
+
+    &-descr {
+        font-size: 36px;
+        font-weight: 700;
+        font-style: italic;
+    }
+}
+
+.about-body {
+    background-color: lighten($primary-color, 62);
+    font-family: $font-PT;
+    font-weight: 400;
+    font-size: 30px;
+    padding: 60px 70px;
+    margin-bottom: 25px;
+
+    &-text {
+        margin-bottom: 50px;
+    }
+
+    &-text:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// бронювання ---------------------------------
+.reserve-wrap {
+    padding: 0 50px;
+}
+
+// .cityes {
+//     width: 100%;
+//     height: 73px;
+//     margin-top: 55px;
+//     text-align: center;
+//     cursor: pointer;
+//     appearance: none;
+//     // webkitAppearance: none;
+
+//     .first {
+//         color: red;
+//         font-size: 17px;
+//         text-align: center;
+//     }
+// }
+
+.custom-select-wrapper {
+    position: relative;
+    width: 100%;
+    height: 73px;
+    margin-top: 55px;
+}
+
+/* Ховаємо стандартний select */
+.custom-select-wrapper select {
+    display: none;
+}
+
+.custom-select {
+    position: relative;
+    user-select: none;
+    height: 100%;
+}
+
+.custom-select__trigger {
+    font-family: $font-PT;
+    font-size: 28px;
+    color: lighten($black-color, 20);
+    padding: 8px;
+    // border: 2px solid #007bff;
+    // border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-options {
+    display: none;
+    position: absolute;
+    width: 100%;
+    background: white;
+    margin-top: 4px;
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.custom-options li {
+    // padding: 8px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: lighten($black-color, 67);
+    font-family: $font-PT;
+    font-style: italic;
+    font-size: 32px;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+    color: lighten($black-color, 17);
+}
+
+.custom-options li:hover {
+    background-color: lighten($black-color, 50);
+    color: #000;
+}
+
+.custom-select-arrow {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.custom-select-arrow.rotate {
+    transform: rotate(180deg) translateY(50%);
+
+}
+
+.custom-options.show {
+    display: block;
+}
+
+// резерв-айтемс -------------
+.reserve-items {
+    margin-top: 55px;
+
+    .reserve-item {
+        background-color: lighten($primary-color, 60);
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-bottom: 36px;
+        position: relative;
+
+        .reserve-image-wrap {
+            width: 485px;
+            height: 245px;
+            margin: 0 10px;
+
+            // flex: 1 0 auto;
+            .reserve-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .reserve-info {
+            width: 712px;
+            padding: 0 10px;
+            position: relative;
+
+            .reserve-info-title {
+                font-family: $font-PT;
+                font-size: 36px;
+                font-weight: bold;
+                font-style: italic;
+                color: $title-color-text;
+                margin-bottom: 10px;
+            }
+
+            .reserve-info-title::after {
+                content: '';
+                display: block;
+                background-color: #fff;
+                height: 3px;
+                margin-top: 7px;
+            }
+
+            .reserve-info-text {
+                background-color: darken($darken-white-color, 9);
+                padding: 25px;
+                height: 184px;
+                font-family: $font-PT;
+                font-size: 22px;
+                color: $primary-color;
+                text-align: center;
+                line-height: 26px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        .reserve-info-btn {
+            position: absolute;
+            right: -50px;
+            bottom: 10px;
+            width: 200px;
+            height: 60px;
+            background-color: $bg-btn-color;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-family: $font-PT;
+            font-weight: 400;
+            font-size: 24px;
+        }
+
+        .reserve-info-btn:hover {
+            background-color: lighten($bg-btn-color, 8);
+        }
+
+        .reserve-info-icon {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            background-image: url(../images/emojione_star.png);
+            background-position: center;
+        }
+
+        .reserve-info-icon.active {
+            background-image: url(../images/Frame1.png);
+        }
+    }
+}
+
 // футер ---------------------------------
+
 .footer {
     flex: 0 0 auto;
     background-color: $primary-color;
@@ -572,4 +843,100 @@ body {
         color: #EEECF1;
         font-style: italic;
     }
+}
+
+// стрілка вгору --------------------------------------------- 
+.arrow-wrap {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    position: fixed;
+    bottom: 140px;
+    right: 50px;
+    cursor: pointer;
+    background-color: lighten($black-color, 50);
+    transition: .5s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+
+    &:hover {
+        opacity: 1 !important;
+    }
+
+    .arrow-icon {
+        width: 30%;
+        margin: auto;
+    }
+}
+
+/* Модальне вікно */
+.modal {
+    display: none;
+    /* приховане за замовчуванням */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* чорний фон */
+}
+
+/* Контейнер модального вікна */
+.modal-content {
+    background: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    max-height: 80%;
+    overflow-y: auto;
+    position: relative;
+}
+
+/* Кнопка закриття */
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.star-link {
+    font-size: 35px !important;
+    background-color: transparent;
+    // border: 1px solid gold;
+}
+
+#favorites {
+    font-family: $font-PT;
+}
+
+#favorites .reserve-item {
+    display: flex !important;
+    border: 1px solid gold;
+}
+
+#favorites .reserve-image-wrap{
+    // padding: 30px;
+    width: 300px;
+}
+
+#favorites .reserve-image-wrap .reserve-image{
+    width: 300px;
+    padding: 20px;
+}
+
+#favorites .reserve-info{
+    padding: 20px;
+}
+
+#favorites .reserve-info-btn{
+    position: absolute;
 }
